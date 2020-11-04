@@ -2,12 +2,13 @@ class Player {
     constructor(playerImage) {
       // set the height, the initial location + the jump controls for the player
       this.image = playerImage;     // so you can load up more than 1 player
-      this.height = 150; 
-      this.width = 120; 
+      this.height = 200; 
+      this.width = 180; 
       this.x = 0;
       this.y = height - this.height;
       this.gravity = 0.4; 
       this.velocity = 0;  
+      this.score = 0; 
     }
     drawPlayer() {
       // draw the player + jump logic with velocity
@@ -36,6 +37,13 @@ class Player {
         if (this.x != 0)
         this.x-=20; 
     }
+
+    addPoints() {
+        let playerScore = document.getElementById('score'); 
+        playerScore.innerText = this.score;
+      }
+    
+   
   }
 
 

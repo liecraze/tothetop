@@ -4,8 +4,8 @@ class Obstacle {
       this.image=coinImage;
       this.x = width ;  // weil die coins sollen von rechts kommen 
       this.y = Math.random() * height / 1.5 ;
-      this.width = 80;
-      this.height = 50;
+      this.width = 60;
+      this.height = 40;
     }
   
     //   define the collision function

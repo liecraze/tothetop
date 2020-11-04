@@ -13,8 +13,9 @@ class Game {
       {src: loadImage("hintergrund5.png"), x:0, speed: 4}];
       // load in images/gifs here
       this.playerImage = loadImage("girlrunning.gif");
-      this.coinImage = loadImage("ycdi.png"); 
-      this.text = "Hallo"; 
+      this.balloon = loadImage("balloon.png");
+      this.coinImage = loadImage("moneywings.png"); 
+   
     }
     setupGame() {
       console.log("this is the game setup");
@@ -23,6 +24,7 @@ class Game {
     this.background = new Background(); 
     this.background.images = this.backgroundImages; 
     this.player = new Player (this.playerImage); 
+    this.text = new Text (); 
     }
   
     drawGame() {
@@ -30,23 +32,35 @@ class Game {
       //  call the draw functions for the player + the background
       // define the obstacle drawing logic + add a new obstacle to  the array in the constructor with the image passed into it
     this.background.drawBackground(); 
+    
     this.player.drawPlayer();
+    
     if (frameCount % 60 === 0)
     { 
       this.obstacles.push(new Obstacle(this.coinImage));
     } 
     this.obstacles.forEach(function(obstacle){
       obstacle.drawObstacle();
+
     }
+     
+    
     );
+
+ 
   
     this.obstacles = this.obstacles.filter((obstacle) => {      // in the array stay only the ones that doesnt get hit
       if (obstacle.collision(this.player)) {
+        game.player.score ++; 
+        console.log(game.player.score);
+        game.player.addPoints(); 
         return false;
       } else {
         return true;
       }
     });
+
+   // this.text.drawText(); 
    
   }
   }

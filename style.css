@@ -1,9 +1,20 @@
 body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    text-align: center; 
     font-family: "Spartan", sans-serif;
     background-color: #e69ac0; 
   }
   
+  p {display:inline;
+    margin:0px;}
+
+
+    /* display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: flex-start; */ 
+
+    #warning {
+      font-size: 20px; 
+      color: red; 
+      background-color: white;
+    }
