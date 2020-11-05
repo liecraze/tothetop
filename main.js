@@ -1,3 +1,5 @@
+let gameStart = false; 
+
 const game = new Game();
 
 function preload() {
@@ -7,26 +9,33 @@ function preload() {
   this.boostScore = document.getElementById('boost'); 
   this.boost = 5; 
   this.warning = document.getElementById("warning"); 
+  this.life = 3; 
+  this.lifeScore = document.getElementById('life'); 
+  this.teleport = loadSound("teleport2.mp3");
+  this.jumpy = loadSound("jump6.mp3"); 
   
 }
 function setup() {
   createCanvas(1200,600);             // predefined method
   game.setupGame();
+
 }
 function draw() {
  
     clear();
   game.drawGame();
+  
+  
 
  // song.play();
 
  if (keyIsDown(UP_ARROW)) {
     if (this.boost > 0)
-   { game.player.y = 100 ;
-  image(this.img, game.player.x, game.player.y, 300, 300);}
-  else 
-  
-   {this.boostScore.innerText = "ZERO!!!"}; 
+   { this.teleport.play();
+     game.player.y = 100 ;
+  image(this.img, game.player.x, game.player.y, 400, 300);}
+  // else 
+   // {this.boostScore.innerText = "ZERO!!!"}; 
  }
 
   if (keyIsDown(RIGHT_ARROW)) {
@@ -38,6 +47,8 @@ function draw() {
    game.player.left(); 
   
   }
+
+ 
  
 }
 
@@ -45,9 +56,10 @@ function draw() {
 function keyPressed() {
 
   if ( keyCode === 32)
-  {
+  {  
+    this.jumpy.play(); 
     game.player.jump();     // player lives in game
-    
+   // this.warning.innerText = "You hit the glass ceiling"; 
     
   }
 
@@ -61,10 +73,24 @@ function keyPressed() {
 
    if (keyCode === 38)
    {  
+    if (this.boost > 0) 
     this.boost--; 
     this.boostScore.innerText = this.boost; 
 
    }
+
+   if (keyCode === 13) {
+    gameStart = true;
+    document.querySelector(".game-start").style.display = "none"; 
+  
+  
+  }
+
+   if (keyCode === 80)
+   { gameStart=false;
+    document.querySelector(".game-start").style.display = "flex";
+
+      } 
 
 
 }

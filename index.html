@@ -9,22 +9,45 @@
     />
    <link rel="stylesheet" href="style.css" /> 
     <script src="https://cdn.jsdelivr.net/npm/p5"></script>
-    <!-- <script defer src=https://cdn.JsDelivr.net/npm/p5/lib/addons/p5.sound.min.js></script> !--> 
-
+    <script defer src=https://cdn.JsDelivr.net/npm/p5/lib/addons/p5.sound.min.js></script> 
+  
    <title>Up to the top</title>
   </head>
   <body>
-    <h1>Up to the top ⬆️ </h1>
-    Salary: <strong id="score"> 0</strong> $/h &nbsp; &nbsp; &nbsp;    Boosts: <strong id="boost"> 5 </strong> <br><br>
+   
+    
+
+   <img src="UTTT.png"> <p> ⬆️</p>
+   <h5>Chase your capitalistic dreams and get the highest salary possible! But there's a little twist...<br>You're a woman, so you don't only have to overcome the glass ceiling, but also dodge the sexist shit you hear on a daily basis! <br> Good luck! </h5><br> 
+    Salary: <strong id="score"> 0</strong> $/h &nbsp; &nbsp; &nbsp;   Diversity Boosts: <strong id="boost"> 5 </strong> &nbsp; &nbsp; Lives: <strong id="life">3</strong> <br><br>
     <div id="warning"></div>
-    <script src="txtobstacle.js"></script>
+
+
+    <div class = "game-start"> 
+    <img src="tothetop5.png">
+    </div>
+
+
+    <div class = "game-over" style-display="none"> 
+      <img src="twoend.png">
+    </div>
+
+   <div class="aud">
+    <audio controls controlsList="nodownload" controlsList="novolume"> 
+      <source src= "Spy.mp3"
+              type="audio/mpeg"> 
+  </audio> </div>
+
+
+    <script src="text.js"></script>
+    <script src="booster.js"></script>
     <script src="obstacle.js"></script>
     <script src="background.js"></script>
     <script src="player.js"></script>
     <script src="game.js"></script>
     <script src="main.js"></script>
     
-
+    
     
 
   </body>

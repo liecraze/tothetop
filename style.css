@@ -1,7 +1,11 @@
 body {
     text-align: center; 
-    font-family: "Spartan", sans-serif;
+    font-family: "Tahoma", Verdana, Geneva, Tahoma, sans-serif;
     background-color: #e69ac0; 
+    background-image: url("banner10.png");
+    background-position: right; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
   }
   
   p {display:inline;
@@ -18,3 +22,44 @@ body {
       color: red; 
       background-color: white;
     }
+
+    .game-start {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      float: left; 
+      text-align: left;
+      margin-left: 110px;
+      color: white; 
+    }
+
+    .game-over {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      height: 550px;
+      float: right;
+      width: 50%;
+      margin-left: 25%;
+      text-align: center;
+      margin-right: 0px;
+    }
+
+   h5 {margin:0;}
+
+   p {margin: 0;
+  font-size: 40px;}
+
+audio {position: fixed; 
+margin-right: 1000px; 
+width: 100px;
+opacity: 0.8; 
+
+ }
+
+.aud { display: flex; 
+  flex-direction: column;
+  float: left; 
+  text-align: left;
+  margin-top: -80px; 
+}
